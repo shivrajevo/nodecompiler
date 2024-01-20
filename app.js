@@ -8,6 +8,8 @@ import path from "path"
 import cors from "cors"
 import "dotenv/config"
 
+// our imports
+import {router as compileapi} from "./routes/apiroutes.mjs"
 
 // env constants
 
@@ -42,6 +44,10 @@ app.use(express.static(path.join(__dirname, "public")))
 app.use(cors(corsOptions))
 
 // routes
+
+app.use(compileapi)
+
+
 
 app.listen(port, () => {
     console.log(`http://127.0.0.1:${port}`)
