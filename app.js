@@ -9,7 +9,9 @@ import cors from "cors"
 import "dotenv/config"
 
 // our imports
-import {router as compileapi} from "./routes/apiroutes.mjs"
+import { router as compileapi } from "./routes/apiroutes.mjs"
+import { errorMiddleware } from "./middlewares/errormid.mjs";
+
 
 // env constants
 
@@ -42,6 +44,8 @@ app.use(express.static(path.join(__dirname, "public")))
 
 // middlewares
 app.use(cors(corsOptions))
+app.use(errorMiddleware)
+
 
 // routes
 
@@ -49,6 +53,6 @@ app.use(compileapi)
 
 
 
-app.listen(port, () => {
-    console.log(`http://127.0.0.1:${port}`)
+app.listen(port, (err) => {
+    console.log(`http://127.0.0.1:${port}`) 
 })

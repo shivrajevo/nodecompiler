@@ -1,3 +1,2 @@
-import { compilePython } from "compilex";
 
 
