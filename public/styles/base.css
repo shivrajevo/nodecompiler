@@ -1,0 +1,34 @@
+* {
+    padding: 0;
+    margin: 0;
+
+    font-family: 'JetBrains Mono', monospace;
+}
+
+:root {
+    --ui-main: rgb(23, 23, 23);
+    --ui-fonts-clr : white;
+    --ui-buttons-clr: white;
+    --ui-buttons-fonts: black;
+}
+
+#navbar{
+    padding: 1vh 2vw;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar>img{
+   width: 7rem;
+   margin-right: auto;
+}
+
+#navbar> button{
+    margin-left: 2vw;
+}
+
+#navbar>select{
+    margin-left: 4vw;
+}

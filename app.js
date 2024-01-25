@@ -10,6 +10,7 @@ import "dotenv/config"
 
 // our imports
 import { router as compileapi } from "./routes/apiroutes.mjs"
+import { router as viewroutes } from "./routes/viewroutes.mjs"
 import { errorMiddleware } from "./middlewares/errormid.mjs";
 
 
@@ -34,7 +35,7 @@ if (process.env.NODE_ENV === "dev") {
 }
 
 // express prefixes middlewares
-app.use(bodyparser.urlencoded({ extended: false }))
+app.use(bodyparser.urlencoded({ extended: true }))
 app.use(express.json())
 
 // express custom middleware
@@ -50,9 +51,10 @@ app.use(errorMiddleware)
 // routes
 
 app.use(compileapi)
+app.use(viewroutes)
 
 
 
 app.listen(port, (err) => {
-    console.log(`http://127.0.0.1:${port}`) 
+    console.log(`http://127.0.0.1:${port}`)
 })

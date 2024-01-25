@@ -7,5 +7,4 @@ const errorMiddleware = (err, req, res, next) => {
     console.log("error middleware")
 
 }
-
 export { errorMiddleware } 
