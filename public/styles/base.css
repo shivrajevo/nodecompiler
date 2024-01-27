@@ -1,34 +1,97 @@
 * {
     padding: 0;
     margin: 0;
-
     font-family: 'JetBrains Mono', monospace;
 }
 
 :root {
     --ui-main: rgb(23, 23, 23);
-    --ui-fonts-clr : white;
+    --ui-fonts-clr: white;
     --ui-buttons-clr: white;
     --ui-buttons-fonts: black;
 }
 
-#navbar{
+
+/* navbar css */
+
+
+#navbar {
     padding: 1vh 2vw;
-    background-color: red;
+    background-color: rgb(35, 178, 255);
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
-#navbar>img{
-   width: 7rem;
-   margin-right: auto;
+#navbar>img {
+    height: 3.8rem;
+    margin-right: auto;
 }
 
-#navbar> button{
+#navbar>button {
     margin-left: 2vw;
+    font-size: 1.6rem;
+    border-radius: 100%;
+    padding: .2rem .6rem;
+    border: none;
+    background-color: white;
+
 }
 
-#navbar>select{
-    margin-left: 4vw;
+#navbar>button:active {
+    background-color: aqua;
+}
+
+
+#navbar>select {
+    margin-left: 2vw;
+    border-radius: 4rem;
+    padding: .2rem .6rem;
+}
+
+
+
+/* terminals */
+#terminals {
+
+    position: absolute;
+    width: 70%;
+    background-color: red;
+    top: 10vw;
+    left: 15vw;
+}
+
+#terminals>div {
+    
+    background-color: blue;
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+}
+
+#terminals #output {
+    box-sizing: border-box;
+    background-color: rgb(172, 255, 134);
+    resize: none;
+    height: 15vw;
+    width: 100%;
+}
+
+#terminals #input {
+    background-color: rgb(255, 178, 89);
+    box-sizing: border-box;
+    resize: none;
+    height: 15vw;
+    width: 100%;
+}
+
+
+/* editor */
+
+#editor {
+    background-color: greenyellow;
+
+    height: 90vh;
+    width: 100%;
 }
