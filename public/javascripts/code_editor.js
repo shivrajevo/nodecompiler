@@ -7,7 +7,7 @@ window.editorx = CodeMirror.fromTextArea(document.querySelector("#editor"),
     mode:"text/x-python",
     lineNumbers: true,
     styleActiveLine: true,
-    theme: 'dracula',
+    theme: 'seti',
     autoCloseBrackets: true,
 
 })

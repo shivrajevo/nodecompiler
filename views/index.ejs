@@ -17,23 +17,70 @@
         </div>
 
 
-        <div id="terminals-box">
+        <div id="popup-terminals">
 
-            <button><i class="bi bi-terminal-x"></i></button>
+            <button><i class="bi bi-x"></i></button>
             <div>
-                <textarea spellcheck="false" id="output"></textarea>
-                <textarea spellcheck="false" id="input"></textarea>
+                <div id="output-box">
+
+                    <h3>Output terminal</h3>
+                    <textarea spellcheck="false" class="terminal" id="output"></textarea>
+                </div>
+
+                <div id="input-box">
+                    <h3>input terminal</h3>
+                    <textarea spellcheck="false" class="terminal" id="input"></textarea>
+
+                </div>
             </div>
 
         </div>
 
-        <div id="settings-box">
-            
+        <div id="popup-settings">
+
+            <h3>Settings Pannel</h3>
+
+
+            <div class="pannel-settings">
+
+                <label for="lang_type">Editor mode</label>
+                <select name="lang-sel" id="lang_type">
+                    <option value="python">python</option>
+                    <option value="c_cpp">c/c++</option>
+                </select>
+                <label for="theme-type">Editor theme</label>
+                <select name="theme-sel" id="theme-type">
+                    <option value="dracula">dracula</option>
+                    <option value="seti">seti</option>
+                    <option value="monokai">monokai</option>
+                    <option value="duotone-light">duo-light</option>
+                </select>
+
+                <label for="editor-fonts">Font size</label>
+                <select name="editorfonts" id="editor-fonts">
+                    <option value="s">small</option>
+                    <option value="n">normal</option>
+                    <option value="m">medium</option>
+                    <option value="r">regulor</option>
+                    <option value="h">high</option>
+
+                </select>
+
+                <button><i class="bi bi-check-lg"></i> apply settings</button>
+
+            </div>
+
+
+
+        </div>
+
+        <div id="popup-infobox">
+            compiling your project
         </div>
 
     </main>
 
-   
+
 
     <script type="text/javascript" src="/javascripts/code_editor.js"></script>
 </body>

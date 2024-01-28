@@ -1,23 +1,62 @@
 * {
     padding: 0;
     margin: 0;
+
 }
 
 :root {
-    --ui-main: rgb(23, 23, 23);
+    --ui-main: rgb(23, 24, 21);
     --ui-fonts-clr: white;
-    --ui-buttons-clr: white;
-    --ui-buttons-fonts: black;
+    --ui-buttons-fonts: rgb(255, 255, 255);
+    --radius-10: 10px;
+    --glass-mode: rgba(39, 39, 39, 0.6);
+    --shadow: 0px 0px 5px 0px #FFFFFF;
+
 }
 
+div[id|="popup"] {
+    border-radius: var(--radius-10);
+    padding: 1em;
+    position: absolute;
+    backdrop-filter: blur(8px) saturate(180%);
+    background-color: var(--glass-mode);
+    border: 1px solid rgba(91, 91, 91, 0.3);
 
-/* navbar css */
+}
 
+button,
+select,
+option {
+    transition: ease-in-out 150ms;
+}
+
+hr {
+    opacity: .3;
+    margin: .5rem 0;
+}
+
+button:active {
+
+    background-color: rgb(191, 191, 191) !important;
+    color: black !important;
+}
+
+option {
+    color: black;
+}
+
+body {
+    overflow-y: hidden;
+}
+
+/* ---------- navbar css */
 
 #navbar {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
     font-family: 'Poppins', sans-serif;
-    padding: 1vh 2vw;
-    background-color: rgb(35, 178, 255);
+    padding: .2em 2em;
+    background-color: var(--ui-main);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -30,84 +69,162 @@
 }
 
 #navbar>button {
+
+    background-color: rgba(255, 255, 255, 0);
     margin-left: 1vw;
     font-size: 1.6rem;
-    border-radius: 100%;
+    border-radius: 1rem;
     padding: .4rem .6rem;
     border: none;
-    background-color: white;
+
+    color: var(--ui-fonts-clr);
 
 }
 
-#navbar>button:active {
-    background-color: aqua;
+#navbar>button:hover {
+
+    background-color: rgb(52, 52, 52);
 }
 
 
-#navbar>select {
-    margin-left: 2vw;
+/* ----------------- terminals */
+#popup-terminals {
+
+    display: none;
+    width: 50svw;
+    top: 14svh;
+    right: 10svw;
+}
+
+#popup-terminals h3 {
+    font-size: 1rem;
+    margin-bottom: .2rem;
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: .1rem;
+    color: var(--ui-fonts-clr);
+}
+
+#popup-terminals>div {
+
+
+    font-size: 1rem;
+    
+
+    box-sizing: border-box;
+    width: 100%;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+#popup-terminals>button {
+    float: right;
+    padding: .1rem .2rem;
+    font-size: 1.4rem;
+    color: var(--ui-fonts-clr);
+    background-color: rgb(0, 0, 0, 0);
+    border: none;
+    border-radius: 100%;
+}
+
+#output-box{
+    display: block;
+}
+#input-box{
+    display: block;
+}
+
+.terminal {
+
+
+    border: none;
+    outline: none;
+    font-family: 'JetBrains Mono', monospace;
+
+    background-color: rgba(0, 0, 0, 0.3);
+    color: rgb(152, 152, 152);
+
+    font-size: inherit;
+    resize: none;
+    height: 30svh;
+    width: 100%;
+    
+
+}
+
+/* -------------------  settings */
+
+#popup-settings {
+    color: var(--ui-fonts-clr);
+    font-family: 'Poppins', sans-serif;
+    display: none;
+    top: 14svh;
+    right: 15svw;
+}
+
+#popup-settings>h3 {
+    font-size: 1.7rem;
+    margin-bottom: 1.5rem;
+}
+
+.pannel-settings {
+
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+}
+
+.pannel-settings>* {
+    margin-bottom: .4em;
+}
+
+.pannel-settings>select {
+
+    color: var(--ui-fonts-clr);
+    background-color: rgba(132, 132, 132, 0.1);
+    font-size: medium;
+    /* width: 30%; */
     border-radius: 10px;
     padding: .2rem .6rem;
 }
 
-
-
-/* terminals */
-#terminals-box {
-
-    display: none;
-
-    position: absolute;
-    width: 70%;
-    background-color: red;
-    top: 10vw;
-    left: 15vw;
+.pannel-settings>button {
+    margin-top: .7rem;
+    color: var(--ui-fonts-clr);
+    background-color: rgba(132, 132, 132, 0.1);
+    font-size: 1rem;
+    border-radius: 10px;
+    padding: .4rem;
+    border: 1px solid gray;
 }
 
-#terminals-box>div {
-    
-    background-color: blue;
+.pannel-settings>button:hover {
+
+    background-color: rgb(52, 52, 52);
+}
+
+
+/* ----------------- editor */
+
+#editor-box {
+    background-color: rebeccapurple;
+    height: max-content;
+
+    box-sizing: border-box;
     display: flex;
+    height: 42.3rem;
+    width: 100%;
     flex-direction: column;
 }
 
-#terminals-box #output {
-    box-sizing: border-box;
-    background-color: rgb(172, 255, 134);
-    resize: none;
-    height: 15vw;
-    width: 100%;
-}
-
-#terminals-box #input {
-    background-color: rgb(255, 178, 89);
-    box-sizing: border-box;
-    resize: none;
-    height: 15vw;
-    width: 100%;
-}
-
-
-/* editor */
-
-#editor-box{
-    box-sizing: border-box;
-    display: flex;
-    height: 88.5svh;
-    width: 100%;
-    flex-direction: column;
-}
 .CodeMirror {
-    padding-top: 1.5vw;
+    padding-top: 1.5svw;
 
     flex: 1;
-    height: 90svh;
+
     /* box-sizing: border-box; */
     font-family: 'JetBrains Mono', monospace;
     font-size: 1.4rem;
-}
-
-
-#settings-box{
-    background-color: rebeccapurple;
 }
