@@ -1,7 +1,6 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: 'JetBrains Mono', monospace;
 }
 
 :root {
@@ -16,6 +15,7 @@
 
 
 #navbar {
+    font-family: 'Poppins', sans-serif;
     padding: 1vh 2vw;
     background-color: rgb(35, 178, 255);
     display: flex;
@@ -30,10 +30,10 @@
 }
 
 #navbar>button {
-    margin-left: 2vw;
+    margin-left: 1vw;
     font-size: 1.6rem;
     border-radius: 100%;
-    padding: .2rem .6rem;
+    padding: .4rem .6rem;
     border: none;
     background-color: white;
 
@@ -46,14 +46,16 @@
 
 #navbar>select {
     margin-left: 2vw;
-    border-radius: 4rem;
+    border-radius: 10px;
     padding: .2rem .6rem;
 }
 
 
 
 /* terminals */
-#terminals {
+#terminals-box {
+
+    display: none;
 
     position: absolute;
     width: 70%;
@@ -62,15 +64,14 @@
     left: 15vw;
 }
 
-#terminals>div {
+#terminals-box>div {
     
     background-color: blue;
     display: flex;
-    /* flex-wrap: wrap; */
     flex-direction: column;
 }
 
-#terminals #output {
+#terminals-box #output {
     box-sizing: border-box;
     background-color: rgb(172, 255, 134);
     resize: none;
@@ -78,7 +79,7 @@
     width: 100%;
 }
 
-#terminals #input {
+#terminals-box #input {
     background-color: rgb(255, 178, 89);
     box-sizing: border-box;
     resize: none;
@@ -89,9 +90,24 @@
 
 /* editor */
 
-#editor {
-    background-color: greenyellow;
-
-    height: 90vh;
+#editor-box{
+    box-sizing: border-box;
+    display: flex;
+    height: 88.5svh;
     width: 100%;
+    flex-direction: column;
+}
+.CodeMirror {
+    padding-top: 1.5vw;
+
+    flex: 1;
+    height: 90svh;
+    /* box-sizing: border-box; */
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.4rem;
+}
+
+
+#settings-box{
+    background-color: rebeccapurple;
 }

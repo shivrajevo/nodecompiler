@@ -28,7 +28,7 @@ let corsOptions = {
     optionSuccessStatus: 200
 }
 
-if (process.env.NODE_ENV === "dev") {
+if (process.env.NODE_ENV == "dev") {
 
     app.disable("view cache")
 

@@ -10,9 +10,14 @@
         <%- include('./partials/_navbar') %>
     </header>
     <main>
-        <textarea id="editor"></textarea>
 
-        <div id="terminals">
+        <div id="editor-box">
+
+            <textarea id="editor"></textarea>
+        </div>
+
+
+        <div id="terminals-box">
 
             <button><i class="bi bi-terminal-x"></i></button>
             <div>
@@ -21,8 +26,16 @@
             </div>
 
         </div>
+
+        <div id="settings-box">
+            
+        </div>
+
     </main>
-    <footer></footer>
+
+   
+
+    <script type="text/javascript" src="/javascripts/code_editor.js"></script>
 </body>
 
 </html>
