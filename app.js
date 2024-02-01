@@ -53,8 +53,6 @@ app.use(errorMiddleware)
 app.use(compileapi)
 app.use(viewroutes)
 
-
-
 app.listen(port, (err) => {
     console.log(`http://127.0.0.1:${port}`)
 })

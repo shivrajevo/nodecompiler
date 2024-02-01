@@ -1,7 +1,6 @@
 * {
     padding: 0;
     margin: 0;
-
 }
 
 .rotate {
@@ -88,12 +87,13 @@ body {
 }
 
 
-header{
+header {
     width: 100%;
     z-index: 2;
     position: fixed;
     top: 0;
 }
+
 /* ---------- navbar css */
 
 #navbar {
@@ -135,7 +135,7 @@ header{
 /* ----------------- terminals */
 #popup-terminals {
 
-    display: block;
+    display: none;
     width: 50svw;
     top: var(--popups-top);
     right: 30svw;
@@ -172,7 +172,7 @@ header{
 }
 
 #input-box {
-    display: block;
+    display: none;
 }
 
 .terminal {
@@ -196,9 +196,9 @@ header{
 /* -------------------  settings */
 
 #popup-settings {
+    display: none;
     color: var(--ui-fonts-clr);
     font-family: var(--fonts-1);
-    display: block;
     top: var(--popups-top);
     right: var(--popups-right);
 }
@@ -223,6 +223,7 @@ header{
 
     color: var(--ui-fonts-clr);
     background-color: rgba(132, 132, 132, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.7);
     font-size: medium;
     /* width: 30%; */
     border-radius: 10px;
@@ -236,7 +237,7 @@ header{
     font-size: 1rem;
     border-radius: 10px;
     padding: .4rem;
-    border: 1px solid gray;
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .pannel-settings>button:hover {
@@ -282,8 +283,7 @@ header{
 
 .CodeMirror {
     padding-top: 1.5svw;
+    /* font-size: 1.4rem !important; */
     flex: 1;
-    /* box-sizing: border-box; */
-    font-family: var(--fonts-2);
-    font-size: 1.4rem;
 }
+
