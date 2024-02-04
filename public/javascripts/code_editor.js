@@ -20,13 +20,22 @@ const editorx = CodeMirror.fromTextArea(document.querySelector("#editor"),
 
 // popup-settings
 
-function popup_onoff(popup_id) {
+function popup_onoff(popup_id, bool = false) {
 
 
     let popup = document.getElementById(popup_id)
 
     if (window.getComputedStyle(popup).display == "block") {
-        popup.style.display = "none"
+
+        if (bool) {
+            popup.style.display = "block";
+
+        }
+        else {
+
+
+            popup.style.display = "none"
+        }
     }
     else {
         popup.style.display = "block"
@@ -41,7 +50,7 @@ function changeFontSize(size) {
     editorx.refresh()
 }
 
-
+changeFontSize(1.6)
 
 
 apply.addEventListener("click", () => {
@@ -82,6 +91,9 @@ apply.addEventListener("click", () => {
     }
 
     switch (fonts.value) {
+        case "o":
+            changeFontSize(1.6)
+            break
         case "s":
             changeFontSize(1)
             break;
@@ -91,10 +103,6 @@ apply.addEventListener("click", () => {
             break;
         case "m":
             changeFontSize(1.4)
-
-            break;
-        case "r":
-            changeFontSize(1.6)
 
             break;
         case "h":
@@ -108,5 +116,6 @@ apply.addEventListener("click", () => {
     }
 
 })
+
 
 

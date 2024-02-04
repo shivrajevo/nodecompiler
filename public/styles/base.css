@@ -63,7 +63,7 @@ div[id|="popup"] {
 button,
 select,
 option {
-    transition: ease-in-out 150ms;
+    transition: ease-in-out 100ms;
 }
 
 hr {
@@ -133,6 +133,15 @@ header {
 
 
 /* ----------------- terminals */
+
+textarea {
+
+    display: block;
+    padding: 2%;
+    box-sizing: border-box;
+    border-radius: var(--radius-10);
+}
+
 #popup-terminals {
 
     display: none;
@@ -144,9 +153,11 @@ header {
 #popup-terminals h3 {
     font-size: 1rem;
     margin-bottom: .2rem;
-    font-family: var(--fonts-2);
-    margin-bottom: .1rem;
+    font-family: var(--fonts-1);
+    margin-bottom: 0.1rem;
     color: var(--ui-fonts-clr);
+    position: relative;
+    bottom: 1em;
 }
 
 #popup-terminals>div {
@@ -161,18 +172,22 @@ header {
 
 
 
-.close-btn {
-    float: right;
-    padding: 0.1rem .2rem;
-    font-size: 1.4rem;
+.terminal-btns {
+    z-index: 2;
+    /* float: right; */
+    padding: .3rem .4rem;
+    font-size: 1rem;
     color: var(--ui-fonts-clr);
-    background-color: rgb(0, 0, 0, 0);
+    background-color: rgb(255 0 0 / 83%);
     border: none;
     border-radius: 100%;
+    position: relative;
+    left: 96%;
 }
 
 #input-box {
     display: none;
+    margin-top: 2em;
 }
 
 .terminal {
@@ -246,6 +261,7 @@ header {
 }
 
 
+
 /* --------------- infobox */
 
 #popup-infobox {
@@ -286,4 +302,3 @@ header {
     /* font-size: 1.4rem !important; */
     flex: 1;
 }
-
