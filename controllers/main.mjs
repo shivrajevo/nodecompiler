@@ -13,10 +13,10 @@ const responser = function (data, res) {
     }
     else if (data.error) {
 
-        res.status(405).json(data)
+        res.status(200).json(data)
 
     } else {
-        res.status(400).json({ error: "invalid code" })
+        res.status(200).json({ error: "invalid code" })
 
     }
     

@@ -135,6 +135,7 @@ header {
 /* ----------------- terminals */
 
 textarea {
+    background-color: var(--ui-main);
 
     display: block;
     padding: 2%;
@@ -172,17 +173,26 @@ textarea {
 
 
 
-.terminal-btns {
+.round-btns {
     z-index: 2;
     /* float: right; */
     padding: .3rem .4rem;
     font-size: 1rem;
     color: var(--ui-fonts-clr);
-    background-color: rgb(255 0 0 / 83%);
     border: none;
     border-radius: 100%;
+    background-color: rgba(100, 100, 100, 0.8);
     position: relative;
-    left: 96%;
+}
+
+
+#close-btn {
+    left: 90%;
+}
+
+#input_btn {
+    left: 89%;
+
 }
 
 #input-box {

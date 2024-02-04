@@ -3,6 +3,12 @@ const langmode = document.querySelector("#lang_type");
 const theme = document.querySelector("#theme-type");
 const fonts = document.querySelector("#editor-fonts");
 const apply = document.querySelector("#apply_settings");
+const run_btn = document.querySelector("#runcode")
+
+// select terminals
+
+const output_term = document.querySelector("#output")
+const input_term = document.querySelector("#input")
 
 
 
@@ -117,5 +123,44 @@ apply.addEventListener("click", () => {
 
 })
 
+run_btn.addEventListener("click", async function () {
+
+    codeXdata = {
+        code: editorx.getValue(),
+        input: input_term.value,
+        langmode: langmode.value
+    }
 
 
+    let from_api = await fetch("/compile", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(codeXdata)
+
+    })
+
+    let data = await from_api.json()
+
+
+    if (data.output) {
+
+        output_term.value = data.output
+        
+    }
+    else {
+        output_term.value = data.error
+    }
+    
+    
+    popup_onoff('popup-terminals',true)
+
+
+
+
+
+    // console.log(data)
+
+
+})
