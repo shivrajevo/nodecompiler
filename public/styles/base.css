@@ -282,9 +282,9 @@ textarea {
 
 #popup-infobox {
 
-    font-family: var(--fonts-1);
     display: none;
     width: 20rem;
+    font-family: var(--fonts-1);
     color: var(--ui-fonts-clr);
     top: var(--popups-top);
     right: var(--popups-right);

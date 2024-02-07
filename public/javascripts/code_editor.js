@@ -17,14 +17,17 @@ const input_term = document.querySelector("#input")
 // to make editor
 const editorx = CodeMirror.fromTextArea(document.querySelector("#editor"),
     {
+        extraKeys: { "Alt": "autocomplete" },
         mode: "text/x-python",
         lineNumbers: true,
         styleActiveLine: true,
+        matchBrackets: true,
+        keyMap: "sublime",
         theme: 'seti',
+        lineWrapping: true,
         autoCloseBrackets: true,
 
     })
-
 
 // popup-settings
 
