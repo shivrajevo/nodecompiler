@@ -4,11 +4,13 @@ const theme = document.querySelector("#theme-type");
 const fonts = document.querySelector("#editor-fonts");
 const apply = document.querySelector("#apply_settings");
 const run_btn = document.querySelector("#runcode")
+const message = document.querySelector("#popup-infobox>p")
 
 // select terminals
 
 const output_term = document.querySelector("#output")
 const input_term = document.querySelector("#input")
+
 
 
 
@@ -35,10 +37,8 @@ function popup_onoff(popup_id, bool = false) {
 
         if (bool) {
             popup.style.display = "block";
-
         }
         else {
-
 
             popup.style.display = "none"
         }
@@ -48,6 +48,38 @@ function popup_onoff(popup_id, bool = false) {
     }
 
 }
+
+
+
+
+function infobox(info, bool = true, time = 0) {
+
+    message.innerHTML = info
+    let infobox = document.querySelector("#popup-infobox")
+
+    if (bool) {
+
+        infobox.style.display = "block"
+    }
+    else {
+        infobox.style.display = "none"
+
+    }
+
+    if (time > 0) {
+
+        setTimeout(() => {
+
+            infobox.style.display = "none"
+
+
+        }, time * 1000);
+
+    }
+
+}
+
+
 
 function changeFontSize(size) {
     const cmElement = document.querySelector('.CodeMirror');
@@ -123,7 +155,11 @@ apply.addEventListener("click", () => {
 
 })
 
+
 run_btn.addEventListener("click", async function () {
+
+    infobox("your program is exe")
+
 
     codeXdata = {
         code: editorx.getValue(),
@@ -144,20 +180,22 @@ run_btn.addEventListener("click", async function () {
     let data = await from_api.json()
 
 
+
     if (data.output) {
 
         output_term.value = data.output
-        
+
+        infobox("", false)
+
+
     }
     else {
         output_term.value = data.error
+        infobox("error in code", true, 1)
     }
-    
-    
-    popup_onoff('popup-terminals',true)
 
 
-
+    popup_onoff('popup-terminals', true)
 
 
     // console.log(data)

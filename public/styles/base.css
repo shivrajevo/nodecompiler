@@ -94,6 +94,25 @@ header {
     top: 0;
 }
 
+
+
+.round-btns {
+    z-index: 2;
+    /* float: right; */
+    padding: .3rem .4rem;
+    font-size: 1rem;
+    color: var(--ui-fonts-clr);
+    border: none;
+    border-radius: 100%;
+    background-color: rgba(100, 100, 100, 0.8);
+    position: relative;
+}
+
+.close-btn {
+    left: 90%;
+}
+
+
 /* ---------- navbar css */
 
 #navbar {
@@ -173,22 +192,9 @@ textarea {
 
 
 
-.round-btns {
-    z-index: 2;
-    /* float: right; */
-    padding: .3rem .4rem;
-    font-size: 1rem;
-    color: var(--ui-fonts-clr);
-    border: none;
-    border-radius: 100%;
-    background-color: rgba(100, 100, 100, 0.8);
-    position: relative;
-}
 
 
-#close-btn {
-    left: 90%;
-}
+
 
 #input_btn {
     left: 89%;
@@ -276,19 +282,23 @@ textarea {
 
 #popup-infobox {
 
-    display: none;
     font-family: var(--fonts-1);
-
-    max-width: 20rem;
+    display: none;
+    width: 20rem;
     color: var(--ui-fonts-clr);
     top: var(--popups-top);
     right: var(--popups-right);
 }
 
 #popup-infobox>button {
+
+    bottom: 1vh;
+    left: 93%;
+}
+
+#popup-infobox>p{
     position: relative;
-    bottom: .6rem;
-    left: .6rem;
+    bottom: 1.5vh;
 }
 
 
