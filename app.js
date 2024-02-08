@@ -1,7 +1,6 @@
 // server file
 
 // node imports
-
 import express from "express";
 import bodyparser from "body-parser";
 import path from "path"
@@ -46,7 +45,6 @@ app.use(express.static(path.join(__dirname, "public")))
 // middlewares
 app.use(cors(corsOptions))
 app.use(errorMiddleware)
-
 
 // routes
 

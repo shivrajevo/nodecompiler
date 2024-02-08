@@ -1,6 +1,7 @@
 import { compileCPP, compileCPPWithInput, compilePython, compilePythonWithInput, init } from "compilex";
 import asyncHandler from "express-async-handler"
 
+
 if (process.env.NODE_ENV === "dev") {
 
     init({ stats: true })
@@ -8,6 +9,7 @@ if (process.env.NODE_ENV === "dev") {
 
 const responser = function (data, res) {
 
+   
     if (data.output) {
         res.status(200).json(data)
     }
@@ -19,7 +21,7 @@ const responser = function (data, res) {
         res.status(200).json({ error: "invalid code" })
 
     }
-    
+
 }
 
 const compiler = asyncHandler(
@@ -50,7 +52,7 @@ const compiler = asyncHandler(
                     }
                     else {
 
-                       
+
                         compilePython(envData, code, (data) => {
 
                             responser(data, res)
