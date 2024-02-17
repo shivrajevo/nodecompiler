@@ -1,13 +1,13 @@
 {
   "type": "module",
   "name": "nodecompiler",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "shivraj singh",
   "license": "ISC",
   "dependencies": {
     "compilex": "^0.7.4",
