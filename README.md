@@ -55,6 +55,5 @@ We would like to extend our gratitude to the following projects for their contri
   - GitHub: [codemirror/CodeMirror](https://github.com/codemirror/CodeMirror)
 
 - **Compilex**: Compilex is a library for compiling and executing code snippets in various programming languages. Its seamless integration with nodecompiler enables users to run C, C++, and Python code directly within the application.
-  - GitHub: [H1dd3nM1nd/compilex](https://github.com/H1dd3nM1nd/compilex)
 
 We sincerely appreciate the efforts of these projects' developers in creating and maintaining their valuable contributions to the open-source community.
